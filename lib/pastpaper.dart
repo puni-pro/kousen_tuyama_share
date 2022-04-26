@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:kousen_tuyama_share/paper.dart';
 
-class PastPaper extends StatelessWidget {
+class PastPaper extends StatefulWidget {
+
   const PastPaper({Key? key}) : super(key: key);
+
+  @override
+  State<PastPaper> createState() => _PastPaperState();
+}
+
+class _PastPaperState extends State<PastPaper> {
+  var years = ["1年生","2年生","3年生","4年生","5年生"];
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +27,14 @@ class PastPaper extends StatelessWidget {
                 height: 100, //高さ
                 child: ElevatedButton(
                   onPressed: () {
-
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Paper(years[0]),
+                      ),);
 
                   },
-                  child: const Text('1年生'),
+                  child: Text(years[0]),
                 ),
               ),
               const Spacer(flex: 1),
@@ -30,9 +43,13 @@ class PastPaper extends StatelessWidget {
                 height: 100, //高さ
                 child: ElevatedButton(
                   onPressed: () {
-
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Paper(years[1]),
+                      ),);
                   },
-                  child: const Text('2年生'),
+                  child: Text(years[1]),
                 ),
               ),
               const Spacer(flex: 1),
@@ -41,10 +58,15 @@ class PastPaper extends StatelessWidget {
                 height: 100, //高さ
                 child: ElevatedButton(
                   onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Paper(years[2]),
+                      ),);
 
 
                   },
-                  child: const Text('3年生'),
+                  child: Text(years[2]),
                 ),
               ),
               const Spacer(flex: 1),
@@ -53,10 +75,14 @@ class PastPaper extends StatelessWidget {
                 height: 100, //高さ
                 child: ElevatedButton(
                   onPressed: () {
-
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Paper(years[3]),
+                      ),);
 
                   },
-                  child: const Text('4年生'),
+                  child: Text(years[3]),
                 ),
               ),
               const Spacer(flex: 1),
@@ -65,9 +91,14 @@ class PastPaper extends StatelessWidget {
                 height: 100, //高さ
                 child: ElevatedButton(
                   onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Paper(years[4]),
+                      ),);
 
                   },
-                  child: const Text('5年生'),
+                  child: Text(years[4]),
                 ),
               ),
               const Spacer(flex: 1),

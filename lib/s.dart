@@ -2,12 +2,26 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 
-class NewsScreen extends StatelessWidget {
+class NewsScreen extends StatefulWidget {
   const NewsScreen({Key? key}) : super(key: key);
 
+  @override
+  _NewsScreen createState() => _NewsScreen();
+}
+
+class _NewsScreen extends State<NewsScreen>{
 
 
+  late var _counters = [0,0];
 
+  List _includeCounter(List _counters ,int i){
+    setState(() {
+      _counters[i]++;
+    });
+
+
+    return _counters;
+  }
 
 
 
@@ -44,16 +58,17 @@ class NewsScreen extends StatelessWidget {
                   height: 100,
                   child: ElevatedButton(
                       onPressed: () {
+                        _includeCounter(_counters, 0);
 
 
                       },
                       child:Column(
-                          children:const [
-                            Spacer(flex: 1),
-                            Icon(Icons.article),
-                            Text('ニュース'),
-                            Text("0"),
-                            Spacer(flex: 1),
+                          children:[
+                            const Spacer(flex: 1),
+                            const Icon(Icons.article),
+                            const Text('ニュース'),
+                            Text(_counters[0].toString()),
+                            const Spacer(flex: 1),
                           ]
                       )
                   ),
@@ -63,15 +78,17 @@ class NewsScreen extends StatelessWidget {
                   width: 100, //横幅
                   height: 100,
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _includeCounter(_counters, 1);
+                      },
                       child: Column(
-                          children:const [
-                            Spacer(flex: 1),
-                            Icon(Icons.access_time),
-                            Text('タイマー'),
-                            Text("0"),
+                          children:[
+                            const Spacer(flex: 1),
+                            const Icon(Icons.access_time),
+                            const Text('タイマー'),
+                            Text(_counters[1].toString()),
 
-                            Spacer(flex: 1),
+                            const Spacer(flex: 1),
                           ]
                       )
 

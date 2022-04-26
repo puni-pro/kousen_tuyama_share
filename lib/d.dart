@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kousen_tuyama_share/star.dart';
 
 
 import 'lecture.dart';
@@ -62,7 +63,14 @@ class CloudScreen extends StatelessWidget {
                       width: 200, //横幅
                       height: 100,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Star(),
+                              ),);
+
+                          },
                           child: Column(
                               children: const [
                                 Spacer(flex: 1),
